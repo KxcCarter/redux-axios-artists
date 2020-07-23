@@ -1,18 +1,17 @@
 // App.js
 
 import React, { Component } from 'react';
-import './App.css';
-import axios from 'axios';
-import ArtistList from './../ArtistList/ArtistList.js';
-
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import axios from 'axios';
+
+// --- Style ---
+import './App.css';
+// --- Custom Components ---
+import ArtistList from './../ArtistList/ArtistList.js';
+import AddArtist from './../AddArtist/AddArtist';
 
 class App extends Component {
-  // Called when the (App) component is created
-  state = {
-    artists: [],
-  };
-
   // DOM is ready
   componentDidMount() {
     // react Component method
@@ -40,13 +39,33 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Famous Artists</h1>
-        </header>
-        <br />
-        <ArtistList refreshArtists={this.refreshArtists} />
-      </div>
+      <Router>
+        <div className="App">
+          <header className="App-header">
+            <h1 className="App-title">Famous Artists</h1>
+          </header>
+          <br />
+
+          <div>
+            <button>
+              <Link to="/allArtists">Artist List</Link>
+            </button>
+            <button>
+              <Link to="/addArtists">Add Artist</Link>
+            </button>
+          </div>
+          <Route
+            exact
+            path="/allArtists"
+            render={(props) => <ArtistList {...props} refreshArtists={this.refreshArtists} />}
+          />
+          <Route
+            exact
+            path="/addArtists"
+            render={(props) => <AddArtist {...props} refreshArtists={this.refreshArtists} />}
+          />
+        </div>
+      </Router>
     );
   }
 }

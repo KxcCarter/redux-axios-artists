@@ -8,14 +8,10 @@ let artists = require('../modules/artist.data');
 let nextId = artists.length;
 
 router.delete('/:id', (req, res) => {
-  // TODO: Use filter to remove the artist
-  // artists = artists.filter(...)
   const id = req.params.id;
-  console.log(id);
   artists = artists.filter((item, index) => {
     return id != item.id;
   });
-  console.log(artists);
   res.sendStatus(200);
 });
 
