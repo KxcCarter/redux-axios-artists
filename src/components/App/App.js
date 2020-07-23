@@ -45,7 +45,7 @@ class App extends Component {
           <h1 className="App-title">Famous Artists</h1>
         </header>
         <br />
-        <ArtistList refreshArtists={this.refreshArtists} artistList={this.state.artists} />
+        <ArtistList refreshArtists={this.refreshArtists} />
       </div>
     );
   }
