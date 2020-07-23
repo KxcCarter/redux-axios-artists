@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 class AddArtist extends Component {
   state = {
@@ -14,6 +15,7 @@ class AddArtist extends Component {
       .post('/artist', this.state)
       .then((response) => {
         this.props.refreshArtists();
+        this.props.history.push('/allArtists');
       })
       .catch((err) => {
         console.log(`POST error! ${err}`);

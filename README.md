@@ -16,7 +16,7 @@ For this activity you'll be adding Redux to the famous artists project. Redux ha
   - [x] Add a client side route for the form, `/#/addArtist`
   - [x] Add a client side route for the list of artist, `/#/allArtists`
 - [x] Create a new component with an add artist form. Make it available at `#/add-artist`.
-- [ ] When submitting the form, POST the new artist to your **server**.
+- [x] When submitting the form, POST the new artist to your **server**.
   - Data sent to the server should be in the format `{name: 'name of artist'}`. The id is added by the server.
 
 ## Stretch
