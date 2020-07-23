@@ -6,12 +6,12 @@ import { connect } from 'react-redux';
 
 class AddArtist extends Component {
   state = {
-    name: this.props.hold,
+    name: this.props.hold.name,
   };
 
   addArtist = () => {
     axios
-      .post('/artist', this.state)
+      .post('/artist', this.props.hold)
       .then((response) => {
         this.props.refreshArtists();
         this.props.history.push('/allArtists');
@@ -28,7 +28,7 @@ class AddArtist extends Component {
   handleInput = (event) => {
     this.props.dispatch({
       type: 'HOLD_INPUT_DATA',
-      payload: event.target.value,
+      payload: { name: event.target.value },
     });
   };
 
@@ -37,7 +37,7 @@ class AddArtist extends Component {
       <div>
         <h3>Add a new artist</h3>
         <form onSubmit={this.addArtist}>
-          <input type="text" value={this.props.hold} required onChange={this.handleInput} />
+          <input type="text" value={this.state.name} required onChange={this.handleInput} />
           <button type="submit">Add!</button>
         </form>
       </div>
