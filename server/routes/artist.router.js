@@ -2,6 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
+const pool = require('../modules/pool');
 // Using a array of data on the server, we will eventually
 // move this back into the database.
 let artists = require('../modules/artist.data');
