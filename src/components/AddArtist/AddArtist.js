@@ -6,12 +6,12 @@ import { connect } from 'react-redux';
 
 class AddArtist extends Component {
   state = {
-    newArtist: '',
+    name: '',
   };
 
   addArtist = () => {
     axios
-      .post('/artist', this.state.newArtist)
+      .post('/artist', this.state)
       .then((response) => {
         this.props.refreshArtists();
       })
@@ -22,7 +22,7 @@ class AddArtist extends Component {
 
   handleInput = (event) => {
     this.setState({
-      newArtist: event.target.value,
+      name: event.target.value,
     });
   };
 
@@ -31,7 +31,7 @@ class AddArtist extends Component {
       <div>
         <h3>Add a new artist</h3>
         <form onSubmit={this.addArtist}>
-          <input type="text" value={this.state.newArtist} required onChange={this.handleInput} />
+          <input type="text" value={this.state.name} required onChange={this.handleInput} />
           <button type="submit">Add!</button>
         </form>
       </div>

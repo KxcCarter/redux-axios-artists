@@ -51,7 +51,7 @@ class App extends Component {
               <Link to="/allArtists">Artist List</Link>
             </button>
             <button>
-              <Link to="/addArtists">Add Artist</Link>
+              <Link to="/add-artist">Add Artist</Link>
             </button>
           </div>
           <Route
@@ -61,7 +61,7 @@ class App extends Component {
           />
           <Route
             exact
-            path="/addArtists"
+            path="/add-artist"
             render={(props) => <AddArtist {...props} refreshArtists={this.refreshArtists} />}
           />
         </div>
