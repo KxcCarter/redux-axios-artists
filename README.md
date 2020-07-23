@@ -21,9 +21,9 @@ For this activity you'll be adding Redux to the famous artists project. Redux ha
 
 ## Stretch
 
-- [ ] Remove the `for` loop in `ArtistList` and replace it with a `.map`
-- [ ] Implement the delete route on the **server** using `.filter()`.
-- [ ] As the user types, store the input data in Redux so that it's not lost when the user navigates to the list and back to the form.
+- [x] Remove the `for` loop in `ArtistList` and replace it with a `.map`
+- [x] Implement the delete route on the **server** using `.filter()`.
+- [x] As the user types, store the input data in Redux so that it's not lost when the user navigates to the list and back to the form.
 - [ ] Move the data to a database.
 - [ ] Add additional properties to the form.
 - [ ] Style with Material UI
